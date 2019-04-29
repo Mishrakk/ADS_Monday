@@ -36,7 +36,28 @@ namespace GameOfLife
                 Console.WriteLine();
 
             }
+            PrintGrid(grid);
+        }
 
+        public static void PrintGrid(bool[,] grid)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    if (grid[x, y] == true)
+                    {
+                        Console.Write("A");
+
+                    }
+                    else
+                    {
+                        Console.Write("D");
+                    }
+                }
+                Console.WriteLine();
+
+            }
         }
     }
 }
