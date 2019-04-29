@@ -28,6 +28,8 @@ namespace GameOfLife
 
         public static void PrintGrid(bool[,] grid)
         {
+            System.Threading.Thread.Sleep(1000);
+            Console.Clear();
             for (int y = 0; y < 10; y++)
             {
                 for (int x = 0; x < 10; x++)
