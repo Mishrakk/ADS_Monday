@@ -19,23 +19,10 @@ namespace GameOfLife
         static void Main(string[] args)
         {
             bool[,] grid = new bool[10, 10];//True is alive,False is dead
-            for (int y = 0; y < 10; y++)
-            {
-                for (int x = 0; x < 10; x++)
-                {
-                    if (grid[x, y] == true)
-                    {
-                        Console.Write("A");
-
-                    }
-                    else
-                    {
-                        Console.Write("D");
-                    }
-                }
-                Console.WriteLine();
-
-            }
+            PrintGrid(grid);
+            grid[1, 1] = true;
+            grid[2, 1] = true;
+            grid[3, 1] = true;
             PrintGrid(grid);
         }
 
