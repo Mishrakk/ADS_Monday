@@ -23,7 +23,15 @@ namespace GameOfLife
             {
                 for (int x = 0; x < 10; x++)
                 {
+                    if (grid[x, y] == true)
+                    {
+                        Console.Write("A");
 
+                    }
+                    else
+                    {
+                        Console.Write("D");
+                    }
                 }
 
             }
