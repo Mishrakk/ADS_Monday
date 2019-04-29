@@ -18,6 +18,7 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
+            bool[,] grid = new bool[10, 10];//True is alive,False is dead
 
 
         }
