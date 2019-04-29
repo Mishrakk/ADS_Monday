@@ -33,6 +33,7 @@ namespace GameOfLife
                         Console.Write("D");
                     }
                 }
+                Console.WriteLine();
 
             }
 
