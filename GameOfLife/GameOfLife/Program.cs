@@ -24,8 +24,13 @@ namespace GameOfLife
             grid[2, 1] = true;
             grid[3, 1] = true;
             PrintGrid(grid);
+            grid = CreateNewGeneration(grid);
+            PrintGrid(grid);
         }
-
+        public static bool [,] CreateNewGeneration(bool[,] grid) {
+            bool[,] NewGrid = new bool[10, 10];
+            return NewGrid;
+        }
         public static void PrintGrid(bool[,] grid)
         {
             System.Threading.Thread.Sleep(1000);
@@ -37,7 +42,6 @@ namespace GameOfLife
                     if (grid[x, y] == true)
                     {
                         Console.Write("A");
-
                     }
                     else
                     {
