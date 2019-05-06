@@ -23,9 +23,27 @@ namespace GameOfLife
             grid[1, 1] = true;
             grid[2, 1] = true;
             grid[3, 1] = true;
+            //boat
+            /*grid[5, 5] = true;
+            grid[6, 5] = true;
+            grid[5, 6] = true;
+            grid[7, 6] = true;
+            grid[6, 7] = true;
+            grid[7, 7] = true;*/
+            //glider
+            grid[0, 4] = true;
+            grid[2, 4] = true;
+            grid[1, 5] = true;
+            grid[2, 5] = true;
+            grid[1, 6] = true;
             PrintGrid(grid);
+            for(int t = 0; t < 100; t++)
+            {
             grid = CreateNewGeneration(grid);
             PrintGrid(grid);
+
+
+            }
         }
 
         public static bool [,] CreateNewGeneration(bool[,] grid) {
@@ -74,6 +92,22 @@ namespace GameOfLife
                         {
                             NewGrid[x, y] = true;
                         }
+                        else
+                        {
+                            NewGrid[x, y] = false;
+                        }
+                    }
+                    else
+                    {
+                        if (Count == 3)
+                        {
+                            NewGrid[x, y] = true;
+                        }
+                        else
+                        {
+                            NewGrid[x, y] = false;
+                        }
+
                     }
                 }
 
