@@ -39,10 +39,8 @@ namespace GameOfLife
             PrintGrid(grid);
             for(int t = 0; t < 100; t++)
             {
-            grid = CreateNewGeneration(grid);
-            PrintGrid(grid);
-
-
+                grid = CreateNewGeneration(grid);
+                PrintGrid(grid);
             }
         }
 
@@ -52,43 +50,43 @@ namespace GameOfLife
             {
                 for (int x = 0; x < 10; x++)
                 {
-                    int Count = 0;
+                    int livingNeighbours = 0;
                     if (grid[(x-1+10)%10, (y-1+10)%10])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[x, (y-1+10)%10])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[(x+1)%10, (y-1+10)%10])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[(x-1+10)%10, y])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[(x+1)%10, y])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[(x-1+10)%10, (y+1)%10])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[x, (y+1)%10])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
                     if (grid[(x+1)%10, (y+1)%10])
                     {
-                        Count++;
+                        livingNeighbours++;
                     }
 
                     if (grid[x, y])
                     {
-                        if(Count==2 || Count == 3)
+                        if(livingNeighbours==2 || livingNeighbours == 3)
                         {
                             NewGrid[x, y] = true;
                         }
@@ -99,7 +97,7 @@ namespace GameOfLife
                     }
                     else
                     {
-                        if (Count == 3)
+                        if (livingNeighbours == 3)
                         {
                             NewGrid[x, y] = true;
                         }
