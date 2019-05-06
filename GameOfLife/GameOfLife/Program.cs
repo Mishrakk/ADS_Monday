@@ -27,10 +27,52 @@ namespace GameOfLife
             grid = CreateNewGeneration(grid);
             PrintGrid(grid);
         }
+
         public static bool [,] CreateNewGeneration(bool[,] grid) {
             bool[,] NewGrid = new bool[10, 10];
+            for (int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    int Count = 0;
+                    if (grid[(x-1+10)%10, (y-1+10)%10])
+                    {
+                        Count++;
+                    }
+                    if (grid[x, (y-1+10)%10])
+                    {
+                        Count++;
+                    }
+                    if (grid[(x+1)%10, (y-1+10)%10])
+                    {
+                        Count++;
+                    }
+                    if (grid[(x-1+10)%10, y])
+                    {
+                        Count++;
+                    }
+                    if (grid[(x+1)%10, y])
+                    {
+                        Count++;
+                    }
+                    if (grid[(x-1+10)%10, (y+1)%10])
+                    {
+                        Count++;
+                    }
+                    if (grid[x, (y+1)%10])
+                    {
+                        Count++;
+                    }
+                    if (grid[(x+1)%10, (y+1)%10])
+                    {
+                        Count++;
+                    }
+                }
+
+            }
             return NewGrid;
         }
+
         public static void PrintGrid(bool[,] grid)
         {
             System.Threading.Thread.Sleep(1000);
