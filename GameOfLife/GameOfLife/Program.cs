@@ -67,6 +67,14 @@ namespace GameOfLife
                     {
                         Count++;
                     }
+
+                    if (grid[x, y])
+                    {
+                        if(Count==2 || Count == 3)
+                        {
+                            NewGrid[x, y] = true;
+                        }
+                    }
                 }
 
             }
