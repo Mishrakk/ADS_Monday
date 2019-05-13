@@ -18,7 +18,10 @@ namespace Sorting
             //Here print array after sort
             SortArray(array);
             PrintArray(array);
-
+            Console.WriteLine("This is sorted cocktailsort");
+            //Here print array after sort
+            Cocktailsort(array);
+            PrintArray(array);
         }
         public static void PrintArray(int[] array)
         {
@@ -38,9 +41,17 @@ namespace Sorting
                     array[j] = array[j - 1];
                     array[j - 1] = Temp;
                     j--;
+
                 }
+
             }
         }
-       
+       public static void Cocktailsort(int[] array)
+        {
+           
+        }
+        public static int[] CreateRandomArray(int size) {
+            return new int[5];
+        }
     }
 }
