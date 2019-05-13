@@ -13,15 +13,18 @@ namespace Sorting
             Console.WriteLine("Hello, this is sorting program");
             Console.WriteLine("This is our array: ");
             //Here print array before sort
-            PrintArry(array);
+            PrintArray(array);
             Console.WriteLine("This is sorted array");
             //Here print array after sort
-            PrintArry(array);
+            PrintArray(array);
 
         }
-        public static void PrintArry(int[] array)
+        public static void PrintArray(int[] array)
         {
-
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i]+ ", ");
+            }
         }
     }
 }
