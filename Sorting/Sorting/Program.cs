@@ -16,6 +16,7 @@ namespace Sorting
             PrintArray(array);
             Console.WriteLine("This is sorted array");
             //Here print array after sort
+            SortArray(array);
             PrintArray(array);
 
         }
@@ -26,5 +27,20 @@ namespace Sorting
                 Console.Write(array[i]+ ", ");
             }
         }
+        public static void SortArray(int[] array)
+        {
+            for (int i = 1; i < array.Length; i++)               
+            {
+                int j = i;
+                while(j > 0 && array[j - 1] > array[j])
+                {
+                    int Temp = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = Temp;
+                    j--;
+                }
+            }
+        }
+       
     }
 }
