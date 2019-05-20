@@ -6,10 +6,7 @@ namespace Sorting
     {
         static void Main(string[] args)
         {
-            int[] array = new int[]
-            {
-                5,2,7,8,9
-            };
+            int[] array = CreateRandomArray(10);
             Console.WriteLine("Hello, this is sorting program");
             Console.WriteLine("This is our array: ");
             //Here print array before sort
@@ -18,7 +15,7 @@ namespace Sorting
             //Here print array after sort
             SortArray(array);
             PrintArray(array);
-            Console.WriteLine("This is sorted cocktailsort");
+            Console.WriteLine("This is sorted cocktailsort: ");
             //Here print array after sort
             Cocktailsort(array);
             PrintArray(array);
@@ -52,11 +49,10 @@ namespace Sorting
         }
         public static int[] CreateRandomArray(int size) {
             Random randomGenerator = new Random();
-            randomGenerator.Next();
             int[] array = new int[size];
             for (int i = 0; i < size; i++)
             {
-                array[i] = randomGenerator.Next();
+                array[i] = randomGenerator.Next() % ( 10 * size ); 
             }
             return array;
         }
