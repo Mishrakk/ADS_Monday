@@ -54,10 +54,18 @@ namespace Sorting
             
             {
                 Swapped = false;
-                for (int i = start; i < end; i++)
+                for (int i = start; i < end - 1; i++)
                 {
-
+                    if (array[i] > array[i + 1] ) 
+                    {
+                        int temp = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = temp;
+                        Swapped = true;                        
+                    } 
                 }
+                if (!Swapped)  break;
+                end--;
             }
         }
         public static int[] CreateRandomArray(int size) {
