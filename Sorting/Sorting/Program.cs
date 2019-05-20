@@ -47,6 +47,18 @@ namespace Sorting
         }
         public static void Cocktailsort(int[] array)
         {
+            bool Swapped = true;
+            int start = 0;
+            int end = array.Length;
+            while (Swapped)
+            
+            {
+                Swapped = false;
+                for (int i = start; i < end; i++)
+                {
+
+                }
+            }
         }
         public static int[] CreateRandomArray(int size) {
             Random randomGenerator = new Random();
