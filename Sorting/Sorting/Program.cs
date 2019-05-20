@@ -46,12 +46,19 @@ namespace Sorting
 
             }
         }
-       public static void Cocktailsort(int[] array)
+        public static void Cocktailsort(int[] array)
         {
            
         }
         public static int[] CreateRandomArray(int size) {
-            return new int[5];
+            Random randomGenerator = new Random();
+            randomGenerator.Next();
+            int[] array = new int[size];
+            for (int i = 0; i < size; i++)
+            {
+                array[i] = randomGenerator.Next();
+            }
+            return array;
         }
     }
 }
