@@ -13,7 +13,7 @@ namespace Sorting
             PrintArray(array);
             Console.WriteLine("This is sorted array");
             //Here print array after sort
-            SortArray(array);
+            Insertionsort(array);
             PrintArray(array);
             array = CreateRandomArray(10);
             Console.WriteLine("This is our array: ");
@@ -31,7 +31,7 @@ namespace Sorting
             }
             Console.WriteLine();
         }
-        public static void SortArray(int[] array)
+        public static void Insertionsort(int[] array)
         {
             for (int i = 1; i < array.Length; i++)               
             {
