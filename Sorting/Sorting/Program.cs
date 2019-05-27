@@ -104,7 +104,8 @@ namespace Sorting
         {
             int HeapSize;
             HeapSize = CreateMaxHeap(array);
-
+            Console.WriteLine("This is HEAP");
+            PrintArray(array);
             while(HeapSize > 0)
             {
                 int currentMax = HeapPop(array, HeapSize);
@@ -115,13 +116,16 @@ namespace Sorting
         public static int CreateMaxHeap(int[] array)
         {
             int Heapsize = array.Length;
-            for (int i = Heapsize/2; i > 0; i--)
+            for (int i = (Heapsize/2) -1; i >= 0; i--)
             {
-                Siftup(i, array, Heapsize);
+                SiftDown(i, array, Heapsize);
             }
             return Heapsize;
             
         }
+        public static void SiftDown(int index, int[] array, int Heapsize) {
+        }
+
         public static void Siftup(int index, int[] array, int Heapsize)
         {
             if (index == 0)
