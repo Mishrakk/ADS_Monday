@@ -51,7 +51,6 @@ namespace Sorting
             int start = 0;
             int end = array.Length;
             while (Swapped)
-            
             {
                 Swapped = false;
                 for (int i = start; i < end - 1; i++)
@@ -66,6 +65,17 @@ namespace Sorting
                 }
                 if (!Swapped)  break;
                 end--;
+                for (int i = end - 1; i > start; i--)
+                {
+                    if (array[i - 1] > array[i]) 
+                    {
+                        int temp = array[i - 1];
+                        array[i - 1] = array[i];
+                        array[i] = temp;
+                        Swapped = true;
+                    }
+                }
+                start++;
             }
         }
         public static int[] CreateRandomArray(int size) {
