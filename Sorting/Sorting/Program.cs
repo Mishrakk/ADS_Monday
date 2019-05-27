@@ -112,7 +112,18 @@ namespace Sorting
             }
         }
         public static int CreateMaxHeap(int[] array)
-        { return array.Length;
+        {
+            int Heapsize = array.Length;
+            for (int i = Heapsize/2; i > 0; i--)
+            {
+                Siftup(i, array, Heapsize);
+            }
+            return Heapsize;
+            
+        }
+        public static void Siftup(int index,int[] array,int Heapsize)
+        {
+
         }
         public static int HeapPop(int [] array, int HeapSize)
         {
