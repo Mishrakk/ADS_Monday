@@ -104,6 +104,7 @@ namespace Sorting
         {
             int HeapSize;
             HeapSize = CreateMaxHeap(array);
+
             while(HeapSize > 0)
             {
                 int currentMax = HeapPop(array, HeapSize);
@@ -121,9 +122,20 @@ namespace Sorting
             return Heapsize;
             
         }
-        public static void Siftup(int index,int[] array,int Heapsize)
+        public static void Siftup(int index, int[] array, int Heapsize)
         {
-
+            if (index == 0)
+            {
+                return;
+            }
+            int ParentIndex = index / 2;
+            if (array[index] > array[ParentIndex])
+            {
+                int temp = array[index];
+                array[index] = array[ParentIndex];
+                array[ParentIndex] = temp;
+                Siftup(ParentIndex, array, Heapsize);
+            }
         }
         public static int HeapPop(int [] array, int HeapSize)
         {
