@@ -17,7 +17,7 @@ namespace Sorting
             //Here print array after sort
             Insertionsort(array);
             PrintArray(array);
-            
+
             //CocktailSort part
             array = CreateRandomArray(10);
             Console.WriteLine("This is our array: ");
@@ -40,16 +40,16 @@ namespace Sorting
         {
             for (int i = 0; i < array.Length; i++)
             {
-                Console.Write(array[i]+ ", ");
+                Console.Write(array[i] + ", ");
             }
             Console.WriteLine();
         }
         public static void Insertionsort(int[] array)
         {
-            for (int i = 1; i < array.Length; i++)               
+            for (int i = 1; i < array.Length; i++)
             {
                 int j = i;
-                while(j > 0 && array[j - 1] > array[j])
+                while (j > 0 && array[j - 1] > array[j])
                 {
                     int Temp = array[j];
                     array[j] = array[j - 1];
@@ -68,19 +68,19 @@ namespace Sorting
                 Swapped = false;
                 for (int i = start; i < end - 1; i++)
                 {
-                    if (array[i] > array[i + 1] ) 
+                    if (array[i] > array[i + 1])
                     {
                         int temp = array[i];
                         array[i] = array[i + 1];
                         array[i + 1] = temp;
-                        Swapped = true;                        
-                    } 
+                        Swapped = true;
+                    }
                 }
-                if (!Swapped)  break;
+                if (!Swapped) break;
                 end--;
                 for (int i = end - 1; i > start; i--)
                 {
-                    if (array[i - 1] > array[i]) 
+                    if (array[i - 1] > array[i])
                     {
                         int temp = array[i - 1];
                         array[i - 1] = array[i];
@@ -96,13 +96,27 @@ namespace Sorting
             int[] array = new int[size];
             for (int i = 0; i < size; i++)
             {
-                array[i] = randomGenerator.Next() % (10 * size); 
+                array[i] = randomGenerator.Next() % (10 * size);
             }
             return array;
         }
-        public static void Heapsort(int [] array)
+        public static void Heapsort(int[] array)
         {
-            
+            int HeapSize;
+            HeapSize = CreateMaxHeap(array);
+            while(HeapSize > 0)
+            {
+                int currentMax = HeapPop(array, HeapSize);
+                HeapSize--;
+                array[HeapSize] = currentMax;
+            }
+        }
+        public static int CreateMaxHeap(int[] array)
+        { return array.Length;
+        }
+        public static int HeapPop(int [] array, int HeapSize)
+        {
+            return array[0];
         }
     }
 }
