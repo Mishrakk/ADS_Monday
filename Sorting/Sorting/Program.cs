@@ -27,7 +27,14 @@ namespace Sorting
             Cocktailsort(array);
             PrintArray(array);
 
-
+            //HeapSort part
+            array = CreateRandomArray(10);
+            Console.WriteLine("This is our array: ");
+            PrintArray(array);
+            Console.WriteLine("This is sorted heap sort: ");
+            //Here print array after sort
+            Heapsort(array);
+            PrintArray(array);
         }
         public static void PrintArray(int[] array)
         {
@@ -92,6 +99,10 @@ namespace Sorting
                 array[i] = randomGenerator.Next() % (10 * size); 
             }
             return array;
+        }
+        public static void Heapsort(int [] array)
+        {
+            
         }
     }
 }
