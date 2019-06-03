@@ -123,7 +123,25 @@ namespace Sorting
             return Heapsize;
             
         }
-        public static void SiftDown(int index, int[] array, int Heapsize) {
+        public static void SiftDown(int index, int[] array, int Heapsize)
+        {
+            int leftChildIndex = 2 * index + 1;
+            int rightChildIndex = 2 * index + 2;
+            if (leftChildIndex >= Heapsize && rightChildIndex >= Heapsize)
+            {
+                return;
+            }
+            int MaxIndex;
+            if (leftChildIndex < Heapsize && rightChildIndex < Heapsize)
+            {
+               MaxIndex = array[leftChildIndex] >= array[rightChildIndex] ?
+                leftChildIndex : rightChildIndex;
+            }
+            else if (leftChildIndex < Heapsize)
+                 MaxIndex = array[leftChildIndex];
+            else
+                MaxIndex = array[rightChildIndex];
+           
         }
 
         public static void Siftup(int index, int[] array, int Heapsize)

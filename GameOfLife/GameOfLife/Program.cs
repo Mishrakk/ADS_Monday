@@ -117,17 +117,20 @@ namespace GameOfLife
         {
             System.Threading.Thread.Sleep(1000);
             Console.Clear();
+            Console.WriteLine("Generation: 23");
+            Console.WriteLine("Living cells: 8");
+            Console.WriteLine("Grid size: 10x10");
             for (int y = 0; y < 10; y++)
             {
                 for (int x = 0; x < 10; x++)
                 {
                     if (grid[x, y] == true)
                     {
-                        Console.Write("A");
+                        Console.Write("X");
                     }
                     else
                     {
-                        Console.Write("D");
+                        Console.Write(".");
                     }
                 }
                 Console.WriteLine();
