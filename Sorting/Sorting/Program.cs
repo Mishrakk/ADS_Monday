@@ -131,6 +131,7 @@ namespace Sorting
             {
                 return;
             }
+            
             int MaxIndex;
             if (leftChildIndex < Heapsize && rightChildIndex < Heapsize)
             {
@@ -138,10 +139,16 @@ namespace Sorting
                 leftChildIndex : rightChildIndex;
             }
             else if (leftChildIndex < Heapsize)
-                 MaxIndex = array[leftChildIndex];
+                 MaxIndex = leftChildIndex;
             else
-                MaxIndex = array[rightChildIndex];
-           
+                MaxIndex = rightChildIndex;
+            if (array [index] < array[MaxIndex])
+            {
+                int temp = array[index];
+                array[index] = array[MaxIndex];
+                array[MaxIndex] = temp;
+                SiftDown(MaxIndex, array, Heapsize);
+            }
         }
 
         public static void Siftup(int index, int[] array, int Heapsize)
