@@ -168,7 +168,11 @@ namespace Sorting
         }
         public static int HeapPop(int [] array, int HeapSize)
         {
-            return array[0];
+            int Output = array[0];
+            HeapSize--;
+            array[0] = array[HeapSize];
+            SiftDown(0, array, HeapSize);
+            return Output;
         }
     }
 }
