@@ -91,6 +91,24 @@ namespace Sorting
                 start++;
             }
         }
+        public static void QuickSort(int[] array)
+        {
+            
+        }
+        public static void QuickSortInternal(int[] array, int p, int r)
+        {
+            if (p<r)
+            {
+                int pivot = Partition (array, p,r);
+                QuickSortInternal(array, p, pivot);
+                QuickSortInternal(array, pivot + 1, r);
+
+            }
+        }
+        public static int Partition(int[] array, int p, int r)
+        {
+            return 0;
+        }
         public static int[] CreateRandomArray(int size) {
             Random randomGenerator = new Random();
             int[] array = new int[size];
