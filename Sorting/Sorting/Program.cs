@@ -109,27 +109,25 @@ namespace Sorting
         }
         public static void QuickSortInternal(int[] array, int p, int r)
         {
-            if (p<r)
+            if (p < r)
             {
-
-                int pivot = Partition (array, p,r);
-                QuickSortInternal(array, p, pivot);
+                int pivot = Partition (array, p,  r);
+                QuickSortInternal(array, p, pivot-1);
                 QuickSortInternal(array, pivot + 1, r);
-
             }
         }
         public static int Partition(int[] array, int p, int r)
         {
             int pivot = array[r];
             int i = p - 1;
-            for (int j=p; j<r-1; j++)
+            for (int j = p; j <= r-1; j++)
             {
-                if (array[j]<=pivot)
+                if (array[j] <= pivot)
                 {
                     i++;
                     int temp = array[j];
-                    array[i] = array[j];
-                    array[j] = temp;
+                    array[j] = array[i];
+                    array[i] = temp;
                 }
             }
             int temp2 = array[i+1];
