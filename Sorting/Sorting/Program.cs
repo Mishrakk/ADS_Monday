@@ -35,6 +35,16 @@ namespace Sorting
             //Here print array after sort
             Heapsort(array);
             PrintArray(array);
+
+
+            //QuickSort part
+            array = CreateRandomArray(10);
+            Console.WriteLine("This is our array: ");
+            PrintArray(array);
+            Console.WriteLine("This is sorted quick sort: ");
+            //Here print array after sort
+            QuickSort(array);
+            PrintArray(array);
         }
         public static void PrintArray(int[] array)
         {
@@ -93,12 +103,15 @@ namespace Sorting
         }
         public static void QuickSort(int[] array)
         {
+            QuickSortInternal(array, 0, array.Length - 1);
+
             
         }
         public static void QuickSortInternal(int[] array, int p, int r)
         {
             if (p<r)
             {
+
                 int pivot = Partition (array, p,r);
                 QuickSortInternal(array, p, pivot);
                 QuickSortInternal(array, pivot + 1, r);
@@ -107,7 +120,7 @@ namespace Sorting
         }
         public static int Partition(int[] array, int p, int r)
         {
-            int pivot = array[r - 1];
+            int pivot = array[r];
             int i = p - 1;
             for (int j=p; j<r-1; j++)
             {
@@ -120,8 +133,8 @@ namespace Sorting
                 }
             }
             int temp2 = array[i+1];
-            array[i + 1] = array[r - 1];
-            array[r - 1] = temp2;
+            array[i + 1] = array[r];
+            array[r] = temp2;
             return i + 1;
         }
         public static int[] CreateRandomArray(int size) {
