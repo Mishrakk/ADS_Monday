@@ -119,6 +119,10 @@ namespace Sorting
                     array[j] = temp;
                 }
             }
+            int temp2 = array[i+1];
+            array[i + 1] = array[r - 1];
+            array[r - 1] = temp2;
+            return i + 1;
         }
         public static int[] CreateRandomArray(int size) {
             Random randomGenerator = new Random();
