@@ -107,7 +107,18 @@ namespace Sorting
         }
         public static int Partition(int[] array, int p, int r)
         {
-            return 0;
+            int pivot = array[r - 1];
+            int i = p - 1;
+            for (int j=p; j<r-1; j++)
+            {
+                if (array[j]<=pivot)
+                {
+                    i++;
+                    int temp = array[j];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
         }
         public static int[] CreateRandomArray(int size) {
             Random randomGenerator = new Random();
