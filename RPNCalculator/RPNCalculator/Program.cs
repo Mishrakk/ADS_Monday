@@ -11,12 +11,19 @@ namespace RPNCalculator
         }
         public static double PostFixEvaluator(string Expression)
         {
-            Stack<string> stack = new Stack<string>();
+            Stack<int> stack = new Stack<int>();
             string[] expressionArray = Expression.Split(' ');
+            for(int i=0; i< expressionArray.Length; i++)
+            {
+                if (int.TryParse(expressionArray[i],out int number))
+                {
 
+                }
+            }
 
             return 0;
 
         }
+
     }
 }
