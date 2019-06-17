@@ -12,6 +12,9 @@ namespace RPNCalculator
         public static double PostFixEvaluator(string Expression)
         {
             Stack<string> stack = new Stack<string>();
+            string[] expressionArray = Expression.Split(' ');
+
+
             return 0;
 
         }
