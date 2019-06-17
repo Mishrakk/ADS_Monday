@@ -24,12 +24,24 @@ namespace RPNCalculator
                 {
                     int op2 = stack.Pop();
                     int op1 = stack.Pop();
-
+                    int result = Evaluate(op1, op2, expressionArray[i]);
+                    stack.Push(result);
                 }
             }
 
-            return 0;
+            return stack.Pop();
 
+        }
+        public static int Evaluate(int op1 , int op2, string op)
+        {
+            if (op == "+")
+            {
+                return op1 + op2;
+            }
+            else
+            {
+                return op1 - op2;
+            }
         }
 
     }
