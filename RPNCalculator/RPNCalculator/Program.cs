@@ -17,6 +17,13 @@ namespace RPNCalculator
             {
                 if (int.TryParse(expressionArray[i],out int number))
                 {
+                    stack.Push(number);
+                   
+                }
+                else
+                {
+                    int op2 = stack.Pop();
+                    int op1 = stack.Pop();
 
                 }
             }
