@@ -11,7 +11,7 @@ namespace RPNCalculator
         }
         public static double PostFixEvaluator(string Expression)
         {
-
+            Stack<string> stack = new Stack<string>();
             return 0;
 
         }
