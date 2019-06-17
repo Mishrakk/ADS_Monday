@@ -7,7 +7,9 @@ namespace RPNCalculator
     {
         static void Main(string[] args)
         {
-            
+            string expression = "12 34 +";
+            double result = PostFixEvaluator(expression);
+            Console.WriteLine(expression + " = " + result);
         }
         public static double PostFixEvaluator(string Expression)
         {
